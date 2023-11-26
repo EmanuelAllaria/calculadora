@@ -8,7 +8,7 @@ const handleNumberClick = (num) => {
   if (displayValue === "0" && num !== ".") {
     displayValue = num.toString();
   } else if (num === "." && displayValue.includes(".")) {
-    return; // Permitir solo un punto decimal
+    return;
   } else {
     displayValue += num.toString();
   }
@@ -41,7 +41,11 @@ const handleEqualClick = () => {
       default:
         break;
     }
-    displayValue = result.toString();
+    if (result === NaN) {
+      displayValue = 'Sintax Error';
+    } else {
+      displayValue = result.toString();
+    }
     display.textContent = displayValue;
     operand1 = null;
     operator = null;
