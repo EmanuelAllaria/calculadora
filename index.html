@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calculadora</title>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="App">
+      <div class="container_calculadora">
+        <div class="pantalla" id="display">0</div>
+        <div class="buttons_calc">
+          <button class="grey ac" onClick="{handleClear}">AC</button>
+          <button class="grey" onClick="handleNumberClick('(')">(</button>
+          <button class="grey">%</button>
+          <button class="grey" onClick="handleOperatorClick('÷')">÷</button>
+          <button onClick="handleNumberClick(7)">7</button>
+          <button onClick="handleNumberClick(8)">8</button>
+          <button onClick="handleNumberClick(9)">9</button>
+          <button class="grey" onClick="handleOperatorClick('X')">X</button>
+          <button onClick="handleNumberClick(4)">4</button>
+          <button onClick="handleNumberClick(5)">5</button>
+          <button onClick="handleNumberClick(6)">6</button>
+          <button class="grey" onClick="handleOperatorClick('-')">-</button>
+          <button onClick="handleNumberClick(1)">1</button>
+          <button onClick="handleNumberClick(2)">2</button>
+          <button onClick="handleNumberClick(3)">3</button>
+          <button class="grey" onClick="handleOperatorClick('+')">+</button>
+          <button onClick="handleNumberClick(0)">0</button>
+          <button onClick="handleNumberClick('.')">.</button>
+          <button onClick="handleDelete()">⌫</button>
+          <button class="grey" onClick="handleEqualClick()">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="calculadora.js"></script>
+  </body>
+</html>

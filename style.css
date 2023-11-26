@@ -1,0 +1,74 @@
+body {
+  background: #333;
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container_calculadora {
+  width: 500px;
+  height: 700px;
+  background: #505050;
+  border-radius: 20px;
+}
+
+.pantalla {
+  width: 92%;
+  padding: 20px;
+  background: grey;
+  height: 20%;
+  border-radius: 20px;
+  font-size: xxx-large;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.buttons_calc {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 5rem 5rem 5rem 5rem;
+  grid-template-rows: 5rem 5rem 5rem 5rem 5rem;
+  grid-column-gap: 50px;
+  grid-row-gap: 15px;
+  justify-content: center;
+  padding: 20px;
+}
+
+button {
+  border: none;
+  border-radius: 50%;
+  padding: 30px 10px;
+  font-size: large;
+  font-weight: 900;
+}
+
+button.ac {
+  background: #005d83;
+  color: #fff;
+}
+
+button.grey {
+  background: grey;
+}
+
+@media screen and (max-width: 999px) {
+  .pantalla {
+    width: 90%;
+  }
+  .container_calculadora {
+    width: 400px;
+  }
+  .buttons_calc {
+    grid-column-gap: 15px;
+  }
+  button {
+    padding: 30px 10px;
+    font-size: 15px;
+  }
+}
