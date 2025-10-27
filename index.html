@@ -11,28 +11,68 @@
   <body>
     <div class="App">
       <div class="container_calculadora">
-        <div class="pantalla" id="display">0</div>
-        <div class="buttons_calc">
-          <button class="grey ac" onClick="handleClear()">AC</button>
-          <button class="grey" onClick="handleNumberClick('(')">(</button>
-          <button class="grey">%</button>
-          <button class="grey" onClick="handleOperatorClick('÷')">÷</button>
-          <button onClick="handleNumberClick(7)">7</button>
-          <button onClick="handleNumberClick(8)">8</button>
-          <button onClick="handleNumberClick(9)">9</button>
-          <button class="grey" onClick="handleOperatorClick('X')">X</button>
-          <button onClick="handleNumberClick(4)">4</button>
-          <button onClick="handleNumberClick(5)">5</button>
-          <button onClick="handleNumberClick(6)">6</button>
-          <button class="grey" onClick="handleOperatorClick('-')">-</button>
-          <button onClick="handleNumberClick(1)">1</button>
-          <button onClick="handleNumberClick(2)">2</button>
-          <button onClick="handleNumberClick(3)">3</button>
-          <button class="grey" onClick="handleOperatorClick('+')">+</button>
-          <button onClick="handleNumberClick(0)">0</button>
-          <button onClick="handleNumberClick('.')">.</button>
-          <button onClick="handleDelete()">⌫</button>
-          <button class="grey" onClick="handleEqualClick()">=</button>
+        <header class="topbar">
+          <div class="brand">Calculadora</div>
+          <div class="actions">
+            <button
+              class="btn small"
+              id="toggle-history"
+              aria-label="Mostrar historial"
+            >
+              Historial
+            </button>
+            <label class="theme-switch">
+              <input type="checkbox" id="themeToggle" />
+              <span>🌙</span>
+            </label>
+          </div>
+        </header>
+
+        <div class="pantalla">
+          <div class="display-expresion" id="displayExpr">&nbsp;</div>
+          <div class="display-resultado" id="display">0</div>
+        </div>
+
+        <div class="layout">
+          <aside class="historial" id="historyPanel" hidden>
+            <div class="historial-header">
+              <div>Historial</div>
+              <button class="btn tiny" id="clearHistory">Limpiar</button>
+            </div>
+            <ul id="historyList"></ul>
+          </aside>
+
+          <div class="buttons_calc">
+            <button class="btn fn ac" onClick="handleClear()">AC</button>
+            <button class="btn fn" onClick="handleClearEntry()">CE</button>
+            <button class="btn fn" onClick="handlePercent()">%</button>
+            <button class="btn op" onClick="handleOperatorClick('÷')">÷</button>
+
+            <button class="btn" onClick="handleNumberClick(7)">7</button>
+            <button class="btn" onClick="handleNumberClick(8)">8</button>
+            <button class="btn" onClick="handleNumberClick(9)">9</button>
+            <button class="btn op" onClick="handleOperatorClick('X')">×</button>
+
+            <button class="btn" onClick="handleNumberClick(4)">4</button>
+            <button class="btn" onClick="handleNumberClick(5)">5</button>
+            <button class="btn" onClick="handleNumberClick(6)">6</button>
+            <button class="btn op" onClick="handleOperatorClick('-')">−</button>
+
+            <button class="btn" onClick="handleNumberClick(1)">1</button>
+            <button class="btn" onClick="handleNumberClick(2)">2</button>
+            <button class="btn" onClick="handleNumberClick(3)">3</button>
+            <button class="btn op" onClick="handleOperatorClick('+')">+</button>
+
+            <button class="btn" onClick="handleParen('(')">(</button>
+            <button class="btn" onClick="handleNumberClick(0)">0</button>
+            <button class="btn" onClick="handleDot()">.</button>
+            <button class="btn fn" onClick="handleDelete()">⌫</button>
+
+            <button class="btn fn" onClick="handleParen(')')">)</button>
+            <button class="btn fn" onClick="handleToggleSign()">±</button>
+            <button class="btn fn" onClick="handleSqrt()">√</button>
+            <button class="btn eq" onClick="handleEqualClick()">=</button>
+          </div>
         </div>
       </div>
     </div>
